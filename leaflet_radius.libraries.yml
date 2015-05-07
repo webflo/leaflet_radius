@@ -1,0 +1,7 @@
+wrapper:
+  version: VERSION
+  js:
+    assets/leaflet.radius.js: {}
+  dependencies:
+    - leaflet/leaflet
+    - leaflet/leaflet-drupal
