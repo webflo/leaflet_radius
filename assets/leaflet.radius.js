@@ -32,8 +32,6 @@
           plugin.removeCircle();
         }
         else {
-          console.log(this.value);
-          console.log(map.getCenter());
           plugin.createCircle(map.getCenter(), this.value * 1000, true);
         }
       });
@@ -52,7 +50,6 @@
     },
 
     createCircle: function (latLng, meters, fitBounds) {
-      console.log(this._map.radiusFitBounds);
       if (!this.circle) {
           this.circle = L.circle(latLng, meters, {
               color: 'red',
@@ -78,11 +75,7 @@
     }
   });
 
-  console.log("RADIUS");
   $(document).on('drupal_leaflet.map.plugin.radius', function (e, settings, lMap) {
-    console.log(e);
-    console.log(settings);
-    console.log(lMap);
     if (settings.plugins.radius) {
       var radius = new L.Control.Radius();
       lMap.addControl(radius);
