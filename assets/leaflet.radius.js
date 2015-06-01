@@ -37,12 +37,14 @@
       });
 
       this._map.on('viewreset', function (e) {
-        var value = $select.val();
-        if (value == 0) {
-          plugin.removeCircle();
-        }
-        else {
-          plugin.createCircle(map.getCenter(), value * 1000, true);
+        if (e && e.hard) {
+          var value = $select.val();
+          if (value == 0) {
+            plugin.removeCircle();
+          }
+          else {
+            plugin.createCircle(map.getCenter(), value * 1000, true);
+          }
         }
       });
 
